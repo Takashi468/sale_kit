@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
-import 'about_page.dart';
 import 'contact_page.dart';
+import 'extracts_page.dart';
 import 'home_page.dart';
 import 'products_page.dart';
 
@@ -19,7 +19,7 @@ class _MainShellState extends State<MainShell> {
   static const _pages = [
     HomePage(),
     ProductsPage(),
-    AboutPage(),
+    ExtractsPage(),
     ContactPage(),
   ];
 
@@ -46,7 +46,7 @@ class _MainShellState extends State<MainShell> {
           NavigationDestination(
             icon: Icon(Icons.description_outlined),
             selectedIcon: Icon(Icons.description, color: AppColors.accent),
-            label: 'เกี่ยวกับเรา',
+            label: 'สารสกัด',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outline),

@@ -4,6 +4,7 @@ import '../data/catalog_data.dart';
 import '../theme/app_colors.dart';
 import '../widgets/category_card.dart';
 import 'category_page.dart';
+import 'packaging_catalog_page.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key});
@@ -24,17 +25,21 @@ class ProductsPage extends StatelessWidget {
                 color: AppColors.ink,
               ),
             ),
-            const SizedBox(height: 4),
-            const Text(
-              'เลือกหมวดสินค้าเพื่อดูตัวเลือกบรรจุภัณฑ์ทั้งหมด',
-              style: TextStyle(fontSize: 13, color: AppColors.inkMuted),
-            ),
             const SizedBox(height: 20),
-            ...productCategories.map(
+            const Text(
+              'เลือกตามผลิตภัณฑ์',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: AppColors.ink,
+              ),
+            ),
+            const SizedBox(height: 12),
+            ...formulationCategories.map(
               (category) => Padding(
                 padding: const EdgeInsets.only(bottom: 12),
                 child: CategoryCard(
-                  icon: category.icon == 'supplement'
+                  icon: category.key == 'supplement'
                       ? Icons.medication_outlined
                       : Icons.water_drop_outlined,
                   title: category.title,
@@ -42,7 +47,35 @@ class ProductsPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (_) => CategoryPage(category: category),
+                        builder: (_) =>
+                            CategoryPage(initialCategory: category),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'เลือกตามบรรจุภัณฑ์',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: AppColors.ink,
+              ),
+            ),
+            const SizedBox(height: 12),
+            ...packagingCatalogs.map(
+              (catalog) => Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: CategoryCard(
+                  icon: Icons.inventory_2_outlined,
+                  title: catalog.title,
+                  subtitle: catalog.types.map((t) => t.title).join(', '),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => PackagingCatalogPage(catalog: catalog),
                       ),
                     );
                   },

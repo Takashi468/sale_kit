@@ -53,11 +53,11 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            ...productCategories.map(
+            ...formulationCategories.map(
               (category) => Padding(
                 padding: const EdgeInsets.only(bottom: 12),
                 child: CategoryCard(
-                  icon: category.icon == 'supplement'
+                  icon: category.key == 'supplement'
                       ? Icons.medication_outlined
                       : Icons.water_drop_outlined,
                   title: category.title,
@@ -65,7 +65,8 @@ class HomePage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (_) => CategoryPage(category: category),
+                        builder: (_) =>
+                            CategoryPage(initialCategory: category),
                       ),
                     );
                   },
