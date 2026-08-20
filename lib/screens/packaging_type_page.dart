@@ -38,11 +38,18 @@ class PackagingTypePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ImagePlaceholder(
-                    height: 170,
-                    borderRadius: 0,
-                    width: double.infinity,
-                  ),
+                  photo.imagePath != null
+                      ? Image.asset(
+                          photo.imagePath!,
+                          height: 170,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        )
+                      : const ImagePlaceholder(
+                          height: 170,
+                          borderRadius: 0,
+                          width: double.infinity,
+                        ),
                   Container(
                     width: double.infinity,
                     color: AppColors.surfaceMuted,

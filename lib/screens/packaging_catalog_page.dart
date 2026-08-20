@@ -33,6 +33,11 @@ class PackagingCatalogPage extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             final type = catalog.types[index];
+            final coverImage =
+                type.coverImagePath ??
+                type.photos
+                    .map((photo) => photo.imagePath)
+                    .firstWhere((path) => path != null, orElse: () => null);
             return InkWell(
               borderRadius: BorderRadius.circular(14),
               onTap: () {
@@ -52,16 +57,22 @@ class PackagingCatalogPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: Container(
-                        width: double.infinity,
-                        color: AppColors.accent.withValues(alpha: 0.12),
-                        alignment: Alignment.center,
-                        child: const Icon(
-                          Icons.inventory_2_outlined,
-                          color: AppColors.accent,
-                          size: 36,
-                        ),
-                      ),
+                      child: coverImage != null
+                          ? Image.asset(
+                              coverImage,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            )
+                          : Container(
+                              width: double.infinity,
+                              color: AppColors.accent.withValues(alpha: 0.12),
+                              alignment: Alignment.center,
+                              child: const Icon(
+                                Icons.inventory_2_outlined,
+                                color: AppColors.accent,
+                                size: 36,
+                              ),
+                            ),
                     ),
                     Container(
                       width: double.infinity,

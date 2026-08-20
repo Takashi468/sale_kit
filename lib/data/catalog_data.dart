@@ -74,10 +74,15 @@ const formulationCategories = [supplementFormulation, cosmeticFormulation];
 
 /// A single photographed item shown inside a packaging-type list page.
 class PackagingPhoto {
-  const PackagingPhoto({required this.name, required this.subtitle});
+  const PackagingPhoto({
+    required this.name,
+    required this.subtitle,
+    this.imagePath,
+  });
 
   final String name;
   final String subtitle;
+  final String? imagePath;
 }
 
 /// One packaging type (e.g. "Bowl", "Sachet") — taps into a list of photos.
@@ -86,11 +91,16 @@ class PackagingType {
     required this.title,
     required this.subtitle,
     required this.photos,
+    this.coverImagePath,
   });
 
   final String title;
   final String subtitle;
   final List<PackagingPhoto> photos;
+
+  /// Cover image shown on the catalog grid card. Falls back to the first
+  /// photo's image if not set.
+  final String? coverImagePath;
 }
 
 /// A packaging catalog grid (e.g. "บรรจุภัณฑ์เครื่องสำอาง") containing several types.
@@ -107,15 +117,21 @@ const cosmeticPackagingCatalog = PackagingCatalog(
     PackagingType(
       title: 'Bowl',
       subtitle: 'กระปุกครีม',
+      coverImagePath: 'assets/images/bowl.jpg',
       photos: [
-        PackagingPhoto(name: 'Bowl', subtitle: 'กระปุกครีม'),
-        PackagingPhoto(name: 'Bowl', subtitle: 'กระปุกครีม'),
-        PackagingPhoto(name: 'Bowl', subtitle: 'กระปุกครีม'),
+        PackagingPhoto(
+          name: 'Bowl',
+          subtitle: 'กระปุกครีม',
+          imagePath: 'assets/images/bowl-1.jpg',
+        ),
+        PackagingPhoto(name: 'Bowl', subtitle: 'กระปุกครีม', imagePath: 'assets/images/bowl-2.jpg'),
+        PackagingPhoto(name: 'Bowl', subtitle: 'กระปุกครีม', imagePath: 'assets/images/bowl-3.jpg'),
       ],
     ),
     PackagingType(
       title: 'Airless pump bottle',
       subtitle: 'Airless bottle',
+      coverImagePath: 'assets/images/airless-pump.jpg',
       photos: [
         PackagingPhoto(
           name: 'Airless pump bottle หรือ Airless bottle',
@@ -127,14 +143,24 @@ const cosmeticPackagingCatalog = PackagingCatalog(
     PackagingType(
       title: 'Foam tub',
       subtitle: 'หลอดโฟม',
+      coverImagePath: 'assets/images/foam-tub.png',
       photos: [
-        PackagingPhoto(name: 'Standard', subtitle: 'หลอดทั่วไป'),
-        PackagingPhoto(name: 'Aluminium', subtitle: 'แบบชุบหลอดอลูมิเนียม'),
+        PackagingPhoto(
+          name: 'Standard',
+          subtitle: 'หลอดทั่วไป',
+          imagePath: 'assets/images/plastic-face-tube.jpg',
+        ),
+        PackagingPhoto(
+          name: 'Aluminium',
+          subtitle: 'แบบชุบหลอดอลูมิเนียม',
+          imagePath: 'assets/images/aluminium-face-tube.jpg',
+        ),
       ],
     ),
     PackagingType(
       title: 'glass bottle',
       subtitle: 'ขวดแก้ว',
+      coverImagePath: 'assets/images/glass-bottle.jpg',
       photos: [
         PackagingPhoto(name: 'Aroma bottle', subtitle: 'ขวดอโรม่า'),
         PackagingPhoto(name: 'Diffuser', subtitle: 'ขวดแก้วเครื่องหอม'),
