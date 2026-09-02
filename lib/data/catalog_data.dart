@@ -102,10 +102,11 @@ class PackagingType {
 
 /// A packaging catalog grid (e.g. "บรรจุภัณฑ์เครื่องสำอาง") containing several types.
 class PackagingCatalog {
-  const PackagingCatalog({required this.title, required this.types});
+  const PackagingCatalog({required this.title, required this.types, this.coverImagePath});
 
   final String title;
   final List<PackagingType> types;
+  final String? coverImagePath;
 }
 
 const cosmeticPackagingCatalog = PackagingCatalog(
@@ -181,6 +182,7 @@ const supplementPackagingCatalog = PackagingCatalog(
     PackagingType(
       title: 'Sachet',
       subtitle: 'ถุง / ซอง',
+      coverImagePath: 'assets/images/main_sachet.png',
       photos: [
         PackagingPhoto(name: 'Sachet', subtitle: 'ขนาด 5-20 กรัม'),
         PackagingPhoto(name: 'ซองเชค', subtitle: 'ขนาด 20-50 กรัม'),
@@ -190,6 +192,7 @@ const supplementPackagingCatalog = PackagingCatalog(
     PackagingType(
       title: 'Box',
       subtitle: 'กล่อง',
+      coverImagePath: 'assets/images/main_box.png',
       photos: [
         PackagingPhoto(
           name: 'กระป๋องกระดาษ',
@@ -217,6 +220,7 @@ const supplementPackagingCatalog = PackagingCatalog(
     PackagingType(
       title: 'supplement bottle',
       subtitle: 'กระปุกอาหารเสริม',
+      coverImagePath: 'assets/images/supplement_bottle.jpg',
       photos: [
         PackagingPhoto(name: 'กระปุกยา', subtitle: 'ใส่แคปซูล, เม็ด, Soft Gel'),
         PackagingPhoto(name: 'กระปุก, ถัง', subtitle: ''),
