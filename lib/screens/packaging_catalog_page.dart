@@ -48,66 +48,73 @@ class PackagingCatalogPage extends StatelessWidget {
                 );
               },
               child: Container(
-                clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(color: AppColors.border, width: 1.2),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: coverImage != null
-                          ? Image.asset(
-                              coverImage,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            )
-                          : Container(
-                              width: double.infinity,
-                              color: AppColors.accent.withValues(alpha: 0.12),
-                              alignment: Alignment.center,
-                              child: const Icon(
-                                Icons.inventory_2_outlined,
-                                color: AppColors.accent,
-                                size: 36,
+                child: Padding(
+                  padding: const EdgeInsets.all(1.2),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12.8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: coverImage != null
+                              ? Image.asset(
+                                  coverImage,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                )
+                              : Container(
+                                  width: double.infinity,
+                                  color: AppColors.accent.withValues(
+                                    alpha: 0.12,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: const Icon(
+                                    Icons.inventory_2_outlined,
+                                    color: AppColors.accent,
+                                    size: 36,
+                                  ),
+                                ),
+                        ),
+                        Container(
+                          width: double.infinity,
+                          color: AppColors.surfaceMuted,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 8,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                type.title,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13,
+                                  color: AppColors.ink,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                               ),
-                            ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      color: AppColors.surfaceMuted,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 8,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            type.title,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 13,
-                              color: AppColors.ink,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                              const SizedBox(height: 2),
+                              Text(
+                                type.subtitle,
+                                style: const TextStyle(
+                                  fontSize: 11,
+                                  color: AppColors.inkMuted,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
                           ),
-                          const SizedBox(height: 2),
-                          Text(
-                            type.subtitle,
-                            style: const TextStyle(
-                              fontSize: 11,
-                              color: AppColors.inkMuted,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             );

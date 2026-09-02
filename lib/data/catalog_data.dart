@@ -55,10 +55,7 @@ const cosmeticFormulation = FormulationCategory(
     FormulationItem(name: 'Cream/Serum/Lotion', subtitle: 'ครีม เซรั่ม โลชั่น'),
     FormulationItem(name: 'Facial Care', subtitle: 'บำรุงผิวหน้าอย่างบางเบา'),
     FormulationItem(name: 'Scrub', subtitle: 'ผลัดเซลล์ผิว'),
-    FormulationItem(
-      name: 'Sunscreen toneup',
-      subtitle: 'ปกป้องผิวจากแสงแดด',
-    ),
+    FormulationItem(name: 'Sunscreen toneup', subtitle: 'ปกป้องผิวจากแสงแดด'),
     FormulationItem(name: 'Hair Care', subtitle: 'แชมพูและครีมนวด'),
     FormulationItem(name: 'Deodorant', subtitle: 'ดูแลบำรุงผิวใต้วงแขน'),
     FormulationItem(name: 'Hand/Nail', subtitle: 'บำรุงเล็บและผิวมือ'),
@@ -124,8 +121,16 @@ const cosmeticPackagingCatalog = PackagingCatalog(
           subtitle: 'กระปุกครีม',
           imagePath: 'assets/images/bowl-1.jpg',
         ),
-        PackagingPhoto(name: 'Bowl', subtitle: 'กระปุกครีม', imagePath: 'assets/images/bowl-2.jpg'),
-        PackagingPhoto(name: 'Bowl', subtitle: 'กระปุกครีม', imagePath: 'assets/images/bowl-3.jpg'),
+        PackagingPhoto(
+          name: 'Bowl',
+          subtitle: 'กระปุกครีม',
+          imagePath: 'assets/images/bowl-2.jpg',
+        ),
+        PackagingPhoto(
+          name: 'Bowl',
+          subtitle: 'กระปุกครีม',
+          imagePath: 'assets/images/bowl-3.jpg',
+        ),
       ],
     ),
     PackagingType(
@@ -192,7 +197,8 @@ const supplementPackagingCatalog = PackagingCatalog(
         ),
         PackagingPhoto(
           name: 'กล่องฝาเสียบหัวท้าย',
-          subtitle: 'กล่องกระดาษทรงสี่เหลี่ยมมีสันเสียบเปิด-ปิดทั้งด้านบนและด้านล่าง',
+          subtitle:
+              'กล่องกระดาษทรงสี่เหลี่ยมมีสันเสียบเปิด-ปิดทั้งด้านบนและด้านล่าง',
         ),
         PackagingPhoto(
           name: 'กล่องทรงสูงฝาเสียบ',
@@ -226,35 +232,47 @@ const packagingCatalogs = [
 
 /// Award-winning extract ingredients (tab 3 / home "120 สารสกัด").
 class ExtractIngredient {
-  const ExtractIngredient({required this.name, required this.description});
+  const ExtractIngredient({
+    required this.name,
+    required this.description,
+    this.imagePath,
+  });
 
   final String name;
   final String description;
+  final String? imagePath;
 }
 
 const extractIngredients = [
   ExtractIngredient(
     name: 'WASTAR™ Pink Berry',
     description: 'ผลิตภัณฑ์ควบคุมดัชนีน้ำตาล/ลดผลกระทบจากคาร์โบไฮเดรต',
+    imagePath: 'assets/images/wastar_pink_berry.jpg',
   ),
   ExtractIngredient(
     name: 'Althostem™',
     description: 'เพิ่มความชุ่มชื้น ลดการหย่อนคล้อย ลดเลือนริ้วรอย',
+    imagePath: 'assets/images/altheostem_header_web.png',
   ),
   ExtractIngredient(
     name: 'ColFrag remastered™',
     description: 'กระชับผิวได้ใน 7 วัน — เข้ากับเซรั่ม/ครีมกระชับผิว',
+    imagePath: 'assets/images/col-frag_01.png',
   ),
   ExtractIngredient(
     name: 'NovoRetin™',
-    description: 'เพิ่มปริมาณ Retinoic Acid ในผิว ช่วยผิวกระจ่างใส ลดรอยหมองคล้ำ',
+    description:
+        'เพิ่มปริมาณ Retinoic Acid ในผิว ช่วยผิวกระจ่างใส ลดรอยหมองคล้ำ',
+    imagePath: 'assets/images/novoratin.jpg',
   ),
   ExtractIngredient(
     name: 'CALMandrin™',
     description: 'ปลอบประโลมผิวระคายเคือง เสริมความหนาแน่นผิว',
+    imagePath: 'assets/images/calmandrin.jpeg',
   ),
   ExtractIngredient(
     name: 'Joybliss™',
     description: 'สกัดจากเกรปฟรุ้ต + Black cohosh ช่วยระบบประสาท',
+    imagePath: 'assets/images/joybliss_01.png',
   ),
 ];

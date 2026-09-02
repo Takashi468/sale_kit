@@ -35,50 +35,62 @@ class ExtractsPage extends StatelessWidget {
               (extract) => Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Container(
-                  clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(color: AppColors.border, width: 1.2),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const ImagePlaceholder(
-                        height: 150,
-                        borderRadius: 0,
-                        width: double.infinity,
-                        icon: Icons.eco_outlined,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        color: AppColors.surfaceMuted,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 10,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              extract.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 15,
-                                color: AppColors.ink,
-                              ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(1.2),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12.8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          extract.imagePath != null
+                              ? Image.asset(
+                                  extract.imagePath!,
+                                  height: 150,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                )
+                              : const ImagePlaceholder(
+                                  height: 150,
+                                  borderRadius: 0,
+                                  width: double.infinity,
+                                  icon: Icons.eco_outlined,
+                                ),
+                          Container(
+                            width: double.infinity,
+                            color: AppColors.surfaceMuted,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 14,
+                              vertical: 10,
                             ),
-                            const SizedBox(height: 2),
-                            Text(
-                              extract.description,
-                              style: const TextStyle(
-                                fontSize: 13,
-                                color: AppColors.inkMuted,
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  extract.name,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: AppColors.ink,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  extract.description,
+                                  style: const TextStyle(
+                                    fontSize: 13,
+                                    color: AppColors.inkMuted,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),

@@ -30,58 +30,63 @@ class PackagingTypePage extends StatelessWidget {
           itemBuilder: (context, index) {
             final photo = type.photos[index];
             return Container(
-              clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
                 border: Border.all(color: AppColors.border, width: 1.2),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  photo.imagePath != null
-                      ? Image.asset(
-                          photo.imagePath!,
-                          height: 170,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                        )
-                      : const ImagePlaceholder(
-                          height: 170,
-                          borderRadius: 0,
-                          width: double.infinity,
-                        ),
-                  Container(
-                    width: double.infinity,
-                    color: AppColors.surfaceMuted,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 10,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          photo.name,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 15,
-                            color: AppColors.ink,
-                          ),
-                        ),
-                        if (photo.subtitle.isNotEmpty) ...[
-                          const SizedBox(height: 2),
-                          Text(
-                            photo.subtitle,
-                            style: const TextStyle(
-                              fontSize: 13,
-                              color: AppColors.inkMuted,
+              child: Padding(
+                padding: const EdgeInsets.all(1.2),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12.8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      photo.imagePath != null
+                          ? Image.asset(
+                              photo.imagePath!,
+                              height: 170,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            )
+                          : const ImagePlaceholder(
+                              height: 170,
+                              borderRadius: 0,
+                              width: double.infinity,
                             ),
-                          ),
-                        ],
-                      ],
-                    ),
+                      Container(
+                        width: double.infinity,
+                        color: AppColors.surfaceMuted,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 10,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              photo.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 15,
+                                color: AppColors.ink,
+                              ),
+                            ),
+                            if (photo.subtitle.isNotEmpty) ...[
+                              const SizedBox(height: 2),
+                              Text(
+                                photo.subtitle,
+                                style: const TextStyle(
+                                  fontSize: 13,
+                                  color: AppColors.inkMuted,
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             );
           },

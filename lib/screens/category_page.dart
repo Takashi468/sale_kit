@@ -69,13 +69,12 @@ class _CategoryPageState extends State<CategoryPage> {
               child: GridView.builder(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                 itemCount: _selected.items.length,
-                gridDelegate:
-                    const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 16,
-                      crossAxisSpacing: 16,
-                      childAspectRatio: 0.92,
-                    ),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                  childAspectRatio: 0.92,
+                ),
                 itemBuilder: (context, index) {
                   final item = _selected.items[index];
                   return InkWell(
@@ -88,57 +87,59 @@ class _CategoryPageState extends State<CategoryPage> {
                       );
                     },
                     child: Container(
-                      clipBehavior: Clip.antiAlias,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(
-                          color: AppColors.border,
-                          width: 1.2,
-                        ),
+                        border: Border.all(color: AppColors.border, width: 1.2),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Expanded(
-                            child: ImagePlaceholder(
-                              borderRadius: 0,
-                              width: double.infinity,
-                            ),
-                          ),
-                          Container(
-                            width: double.infinity,
-                            color: AppColors.surfaceMuted,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 8,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  item.name,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 13,
-                                    color: AppColors.ink,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
+                      child: Padding(
+                        padding: const EdgeInsets.all(1.2),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12.8),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Expanded(
+                                child: ImagePlaceholder(
+                                  borderRadius: 0,
+                                  width: double.infinity,
                                 ),
-                                const SizedBox(height: 2),
-                                Text(
-                                  item.subtitle,
-                                  style: const TextStyle(
-                                    fontSize: 11,
-                                    color: AppColors.inkMuted,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
+                              ),
+                              Container(
+                                width: double.infinity,
+                                color: AppColors.surfaceMuted,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 8,
                                 ),
-                              ],
-                            ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      item.name,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 13,
+                                        color: AppColors.ink,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    const SizedBox(height: 2),
+                                    Text(
+                                      item.subtitle,
+                                      style: const TextStyle(
+                                        fontSize: 11,
+                                        color: AppColors.inkMuted,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   );
