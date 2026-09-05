@@ -98,11 +98,17 @@ class _CategoryPageState extends State<CategoryPage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Expanded(
-                                child: ImagePlaceholder(
-                                  borderRadius: 0,
-                                  width: double.infinity,
-                                ),
+                              Expanded(
+                                child: item.imagePath != null
+                                    ? Image.asset(
+                                        item.imagePath!,
+                                        width: double.infinity,
+                                        fit: BoxFit.cover,
+                                      )
+                                    : const ImagePlaceholder(
+                                        borderRadius: 0,
+                                        width: double.infinity,
+                                      ),
                               ),
                               Container(
                                 width: double.infinity,

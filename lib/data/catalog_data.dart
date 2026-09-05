@@ -1,9 +1,14 @@
 /// Formulation types shown when browsing "อาหารเสริม" / "เครื่องสำอาง" by product type.
 class FormulationItem {
-  const FormulationItem({required this.name, required this.subtitle});
+  const FormulationItem({
+    required this.name,
+    required this.subtitle,
+    this.imagePath,
+  });
 
   final String name;
   final String subtitle;
+  final String? imagePath;
 }
 
 class FormulationCategory {
@@ -25,21 +30,51 @@ const supplementFormulation = FormulationCategory(
   title: 'อาหารเสริม',
   subtitle: 'Drink, Softgel, Tablet ฯลฯ',
   items: [
-    FormulationItem(name: 'Drink', subtitle: 'ผงชงดื่ม'),
+    FormulationItem(
+      name: 'Drink',
+      subtitle: 'ผงชงดื่ม',
+      imagePath: 'assets/images/crop_01_sr.png',
+    ),
     FormulationItem(
       name: 'Softgel',
       subtitle: 'เม็ดอาหารเสริมที่มีน้ำมันบรรจุภาในแคปซูล',
+      imagePath: 'assets/images/crop_02_sr.png',
     ),
-    FormulationItem(name: 'Coffee', subtitle: 'เครื่องดื่มพร้อมชง'),
+    FormulationItem(
+      name: 'Coffee',
+      subtitle: 'เครื่องดื่มพร้อมชง',
+      imagePath: 'assets/images/crop_03_sr.png',
+    ),
     FormulationItem(
       name: 'Effervescent/Chewable',
       subtitle: 'เม็ดละลายน้ำและเม็ดเคี้ยว',
+      imagePath: 'assets/images/crop_04_sr.png',
     ),
-    FormulationItem(name: 'Shot', subtitle: 'ผงกรอกปาก'),
-    FormulationItem(name: 'Tablet', subtitle: 'ตอกเม็ด ละลายน้ำ'),
-    FormulationItem(name: 'Oil', subtitle: 'น้ำมัน'),
-    FormulationItem(name: 'Pellet', subtitle: 'เม็ดกลมหรือแท่งขนาดเล็ก'),
-    FormulationItem(name: 'Protein', subtitle: 'โปรตีนจากพืชและสัตว์'),
+    FormulationItem(
+      name: 'Shot',
+      subtitle: 'ผงกรอกปาก',
+      imagePath: 'assets/images/crop_05_sr.png',
+    ),
+    FormulationItem(
+      name: 'Tablet',
+      subtitle: 'ตอกเม็ด ละลายน้ำ',
+      imagePath: 'assets/images/crop_06_sr.png',
+    ),
+    FormulationItem(
+      name: 'Oil',
+      subtitle: 'น้ำมัน',
+      imagePath: 'assets/images/crop_07_sr.png',
+    ),
+    FormulationItem(
+      name: 'Pellet',
+      subtitle: 'เม็ดกลมหรือแท่งขนาดเล็ก',
+      imagePath: 'assets/images/crop_08_sr.png',
+    ),
+    FormulationItem(
+      name: 'Protein',
+      subtitle: 'โปรตีนจากพืชและสัตว์',
+      imagePath: 'assets/images/crop_09_sr.png',
+    ),
   ],
 );
 
@@ -51,19 +86,68 @@ const cosmeticFormulation = FormulationCategory(
     FormulationItem(
       name: 'Cleaner/Shower/Soap',
       subtitle: 'ผลิตภัณฑ์ทำความสะอาดผิวหน้า',
+      imagePath: 'assets/images/cos_01_sr.png',
     ),
-    FormulationItem(name: 'Cream/Serum/Lotion', subtitle: 'ครีม เซรั่ม โลชั่น'),
-    FormulationItem(name: 'Facial Care', subtitle: 'บำรุงผิวหน้าอย่างบางเบา'),
-    FormulationItem(name: 'Scrub', subtitle: 'ผลัดเซลล์ผิว'),
-    FormulationItem(name: 'Sunscreen toneup', subtitle: 'ปกป้องผิวจากแสงแดด'),
-    FormulationItem(name: 'Hair Care', subtitle: 'แชมพูและครีมนวด'),
-    FormulationItem(name: 'Deodorant', subtitle: 'ดูแลบำรุงผิวใต้วงแขน'),
-    FormulationItem(name: 'Hand/Nail', subtitle: 'บำรุงเล็บและผิวมือ'),
-    FormulationItem(name: 'Lip/Mouth', subtitle: 'บำรุงริมฝีปาก'),
-    FormulationItem(name: 'Fragrance', subtitle: 'เพิ่มอรรถรสด้วยกลิ่น'),
-    FormulationItem(name: 'Cosmetic', subtitle: 'ผลิตภัณฑ์ความงาม'),
-    FormulationItem(name: 'Gentle&Feminine', subtitle: 'บำรุงผิว'),
-    FormulationItem(name: 'Men/Exercise', subtitle: 'ผลิตภัณฑ์ความงาม'),
+    FormulationItem(
+      name: 'Cream/Serum/Lotion',
+      subtitle: 'ครีม เซรั่ม โลชั่น',
+      imagePath: 'assets/images/cos_02_sr.png',
+    ),
+    FormulationItem(
+      name: 'Facial Care',
+      subtitle: 'บำรุงผิวหน้าอย่างบางเบา',
+      imagePath: 'assets/images/cos_03_sr.png',
+    ),
+    FormulationItem(
+      name: 'Scrub',
+      subtitle: 'ผลัดเซลล์ผิว',
+      imagePath: 'assets/images/cos_04_sr.png',
+    ),
+    FormulationItem(
+      name: 'Sunscreen toneup',
+      subtitle: 'ปกป้องผิวจากแสงแดด',
+      imagePath: 'assets/images/cos_05_sr.png',
+    ),
+    FormulationItem(
+      name: 'Hair Care',
+      subtitle: 'แชมพูและครีมนวด',
+      imagePath: 'assets/images/cos_06_sr.png',
+    ),
+    FormulationItem(
+      name: 'Deodorant',
+      subtitle: 'ดูแลบำรุงผิวใต้วงแขน',
+      imagePath: 'assets/images/cos_09_sr.png',
+    ),
+    FormulationItem(
+      name: 'Hand/Nail',
+      subtitle: 'บำรุงเล็บและผิวมือ',
+      imagePath: 'assets/images/cos_08_sr.png',
+    ),
+    FormulationItem(
+      name: 'Lip/Mouth',
+      subtitle: 'บำรุงริมฝีปาก',
+      imagePath: 'assets/images/cos_10_sr.png',
+    ),
+    FormulationItem(
+      name: 'Fragrance',
+      subtitle: 'เพิ่มอรรถรสด้วยกลิ่น',
+      imagePath: 'assets/images/cos_07_sr.png',
+    ),
+    FormulationItem(
+      name: 'Cosmetic',
+      subtitle: 'ผลิตภัณฑ์ความงาม',
+      imagePath: 'assets/images/cos_12_sr.png',
+    ),
+    FormulationItem(
+      name: 'Gentle&Feminine',
+      subtitle: 'บำรุงผิว',
+      imagePath: 'assets/images/cos_14_sr.png',
+    ),
+    FormulationItem(
+      name: 'Men/Exercise',
+      subtitle: 'ผลิตภัณฑ์ความงาม',
+      imagePath: 'assets/images/cos_15_sr.png',
+    ),
   ],
 );
 

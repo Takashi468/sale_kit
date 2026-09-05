@@ -22,11 +22,21 @@ class ProductDetailPage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
           children: [
-            const ImagePlaceholder(
-              height: 260,
-              icon: Icons.image_outlined,
-              borderRadius: 18,
-            ),
+            item.imagePath != null
+                ? ClipRRect(
+                    borderRadius: BorderRadius.circular(18),
+                    child: Image.asset(
+                      item.imagePath!,
+                      height: 260,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                : const ImagePlaceholder(
+                    height: 260,
+                    icon: Icons.image_outlined,
+                    borderRadius: 18,
+                  ),
             const SizedBox(height: 20),
             Text(
               item.name,
