@@ -33,47 +33,47 @@ const supplementFormulation = FormulationCategory(
     FormulationItem(
       name: 'Drink',
       subtitle: 'ผงชงดื่ม',
-      imagePath: 'assets/images/crop_01_sr.png',
+      imagePath: 'assets/images/supp_drink.png',
     ),
     FormulationItem(
       name: 'Softgel',
       subtitle: 'เม็ดอาหารเสริมที่มีน้ำมันบรรจุภาในแคปซูล',
-      imagePath: 'assets/images/crop_02_sr.png',
+      imagePath: 'assets/images/supp_softgel.png',
     ),
     FormulationItem(
       name: 'Coffee',
       subtitle: 'เครื่องดื่มพร้อมชง',
-      imagePath: 'assets/images/crop_03_sr.png',
+      imagePath: 'assets/images/supp_coffee.png',
     ),
     FormulationItem(
       name: 'Effervescent/Chewable',
       subtitle: 'เม็ดละลายน้ำและเม็ดเคี้ยว',
-      imagePath: 'assets/images/crop_04_sr.png',
+      imagePath: 'assets/images/supp_effervescent.png',
     ),
     FormulationItem(
       name: 'Shot',
       subtitle: 'ผงกรอกปาก',
-      imagePath: 'assets/images/crop_05_sr.png',
+      imagePath: 'assets/images/supp_shot.png',
     ),
     FormulationItem(
       name: 'Tablet',
       subtitle: 'ตอกเม็ด ละลายน้ำ',
-      imagePath: 'assets/images/crop_06_sr.png',
+      imagePath: 'assets/images/supp_tablet.png',
     ),
     FormulationItem(
       name: 'Oil',
       subtitle: 'น้ำมัน',
-      imagePath: 'assets/images/crop_07_sr.png',
+      imagePath: 'assets/images/supp_oil.png',
     ),
     FormulationItem(
       name: 'Pellet',
       subtitle: 'เม็ดกลมหรือแท่งขนาดเล็ก',
-      imagePath: 'assets/images/crop_08_sr.png',
+      imagePath: 'assets/images/supp_pellet.png',
     ),
     FormulationItem(
       name: 'Protein',
       subtitle: 'โปรตีนจากพืชและสัตว์',
-      imagePath: 'assets/images/crop_09_sr.png',
+      imagePath: 'assets/images/supp_protein.png',
     ),
   ],
 );
