@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
 
 class StaffCard extends StatelessWidget {
-  const StaffCard({super.key, required this.name, required this.phone});
+  const StaffCard({
+    super.key,
+    required this.name,
+    required this.phone,
+    this.avatarImagePath,
+  });
 
   final String name;
   final String phone;
+  final String? avatarImagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +31,21 @@ class StaffCard extends StatelessWidget {
               color: AppColors.surfaceMuted,
               shape: BoxShape.circle,
               border: Border.all(color: AppColors.border.withValues(alpha: 0.15)),
+              image: avatarImagePath != null
+                  ? DecorationImage(
+                      image: AssetImage(avatarImagePath!),
+                      fit: BoxFit.cover,
+                    )
+                  : null,
             ),
             alignment: Alignment.center,
-            child: const Icon(
-              Icons.person_outline,
-              color: AppColors.inkMuted,
-              size: 22,
-            ),
+            child: avatarImagePath == null
+                ? const Icon(
+                    Icons.person_outline,
+                    color: AppColors.inkMuted,
+                    size: 22,
+                  )
+                : null,
           ),
           const SizedBox(width: 14),
           Column(

@@ -226,8 +226,13 @@ const cosmeticPackagingCatalog = PackagingCatalog(
         PackagingPhoto(
           name: 'Airless pump bottle หรือ Airless bottle',
           subtitle: 'ขวดปั๊ม - ขวดสูญญากาศ',
+          imagePath: 'assets/images/airless_pump.png',
         ),
-        PackagingPhoto(name: 'Spray bottle', subtitle: 'ขวดหัวสเปรย์'),
+        PackagingPhoto(
+          name: 'Spray bottle',
+          subtitle: 'ขวดหัวสเปรย์',
+          imagePath: 'assets/images/spray_bottle.png',
+        ),
       ],
     ),
     PackagingType(
@@ -252,9 +257,21 @@ const cosmeticPackagingCatalog = PackagingCatalog(
       subtitle: 'ขวดแก้ว',
       coverImagePath: 'assets/images/glass-bottle.jpg',
       photos: [
-        PackagingPhoto(name: 'Aroma bottle', subtitle: 'ขวดอโรม่า'),
-        PackagingPhoto(name: 'Diffuser', subtitle: 'ขวดแก้วเครื่องหอม'),
-        PackagingPhoto(name: 'Perfume bottle', subtitle: 'ขวดแก้วน้ำหอม'),
+        PackagingPhoto(
+          name: 'Aroma bottle',
+          subtitle: 'ขวดอโรม่า',
+          imagePath: 'assets/images/aroma_bottle.png',
+        ),
+        PackagingPhoto(
+          name: 'Diffuser',
+          subtitle: 'ขวดแก้วเครื่องหอม',
+          imagePath: 'assets/images/diffuser.png',
+        ),
+        PackagingPhoto(
+          name: 'Perfume bottle',
+          subtitle: 'ขวดแก้วน้ำหอม',
+          imagePath: 'assets/images/perfume_bottle.png',
+        ),
       ],
     ),
   ],
@@ -268,9 +285,21 @@ const supplementPackagingCatalog = PackagingCatalog(
       subtitle: 'ถุง / ซอง',
       coverImagePath: 'assets/images/main_sachet.png',
       photos: [
-        PackagingPhoto(name: 'Sachet', subtitle: 'ขนาด 5-20 กรัม'),
-        PackagingPhoto(name: 'ซองเชค', subtitle: 'ขนาด 20-50 กรัม'),
-        PackagingPhoto(name: 'ซองถุง', subtitle: 'ขนาด 100-300 กรัม'),
+        PackagingPhoto(
+          name: 'Sachet',
+          subtitle: 'ขนาด 5-20 กรัม',
+          imagePath: 'assets/images/Sachet.png',
+        ),
+        PackagingPhoto(
+          name: 'ซองเชค',
+          subtitle: 'ขนาด 20-50 กรัม',
+          imagePath: 'assets/images/Sachet2.png',
+        ),
+        PackagingPhoto(
+          name: 'ซองถุง',
+          subtitle: 'ขนาด 100-300 กรัม',
+          imagePath: 'assets/images/Sachet3.png',
+        ),
       ],
     ),
     PackagingType(
@@ -281,15 +310,18 @@ const supplementPackagingCatalog = PackagingCatalog(
         PackagingPhoto(
           name: 'กระป๋องกระดาษ',
           subtitle: 'ทรงกระบอกกลม มีฝาสวมเปิด-ปิดด้านบน',
+          imagePath: 'assets/images/box1.png',
         ),
         PackagingPhoto(
           name: 'กล่องฝาเสียบหัวท้าย',
           subtitle:
               'กล่องกระดาษทรงสี่เหลี่ยมมีสันเสียบเปิด-ปิดทั้งด้านบนและด้านล่าง',
+          imagePath: 'assets/images/Box3.png',
         ),
         PackagingPhoto(
           name: 'กล่องทรงสูงฝาเสียบ',
           subtitle: 'กล่องสี่เหลี่ยม มีฝาเปิดด้านบน',
+          imagePath: 'assets/images/Box2.png',
         ),
         PackagingPhoto(
           name: 'กล่องฝาครอบ',
@@ -306,8 +338,16 @@ const supplementPackagingCatalog = PackagingCatalog(
       subtitle: 'กระปุกอาหารเสริม',
       coverImagePath: 'assets/images/supplement_bottle.jpg',
       photos: [
-        PackagingPhoto(name: 'กระปุกยา', subtitle: 'ใส่แคปซูล, เม็ด, Soft Gel'),
-        PackagingPhoto(name: 'กระปุก, ถัง', subtitle: ''),
+        PackagingPhoto(
+          name: 'กระปุกยา',
+          subtitle: 'ใส่แคปซูล, เม็ด, Soft Gel',
+          imagePath: 'assets/images/supplement_bottle1.png',
+        ),
+        PackagingPhoto(
+          name: 'กระปุก, ถัง',
+          subtitle: '',
+          imagePath: 'assets/images/supplement_bottle2.png',
+        ),
       ],
     ),
   ],
