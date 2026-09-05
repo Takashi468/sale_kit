@@ -4,11 +4,13 @@ class FormulationItem {
     required this.name,
     required this.subtitle,
     this.imagePath,
+    this.description,
   });
 
   final String name;
   final String subtitle;
   final String? imagePath;
+  final String? description;
 }
 
 class FormulationCategory {
@@ -34,46 +36,73 @@ const supplementFormulation = FormulationCategory(
       name: 'Drink',
       subtitle: 'ผงชงดื่ม',
       imagePath: 'assets/images/supp_drink.png',
+      description:
+          'ผงชงละลายน้ำ พกพาง่าย ปรับรสชาติและความเข้มข้นได้หลากหลาย '
+          'เหมาะกับสูตรวิตามิน คอลลาเจน หรือดีท็อกซ์ที่ต้องการรสชาติถูกปาก',
     ),
     FormulationItem(
       name: 'Softgel',
       subtitle: 'เม็ดอาหารเสริมที่มีน้ำมันบรรจุภาในแคปซูล',
       imagePath: 'assets/images/supp_softgel.png',
+      description:
+          'แคปซูลนิ่มหุ้มสารสกัดที่ละลายในน้ำมัน เช่น น้ำมันปลา น้ำมันเมล็ดองุ่น '
+          'ดูดซึมได้ดี ควบคุมปริมาณต่อเม็ดแม่นยำ ไม่มีกลิ่นรบกวนขณะทาน',
     ),
     FormulationItem(
       name: 'Coffee',
       subtitle: 'เครื่องดื่มพร้อมชง',
       imagePath: 'assets/images/supp_coffee.png',
+      description:
+          'กาแฟพร้อมชงผสมสารสกัดเสริมสุขภาพ ได้ทั้งรสชาติที่คุ้นเคยและประโยชน์เสริม '
+          'เจาะกลุ่มลูกค้าที่ดื่มกาแฟเป็นประจำอยู่แล้ว',
     ),
     FormulationItem(
       name: 'Effervescent/Chewable',
       subtitle: 'เม็ดละลายน้ำและเม็ดเคี้ยว',
       imagePath: 'assets/images/supp_effervescent.png',
+      description:
+          'เม็ดฟู่ละลายน้ำเกิดฟองก๊าซคาร์บอนไดออกไซด์ช่วยดูดซึมได้ดี '
+          'นิยมใช้กับวิตามินซี หรือเม็ดเคี้ยวรสชาติดี ทานง่ายไม่ต้องกลืนทั้งเม็ด',
     ),
     FormulationItem(
       name: 'Shot',
       subtitle: 'ผงกรอกปาก',
       imagePath: 'assets/images/supp_shot.png',
+      description:
+          'ของเหลวหรือผงเข้มข้นบรรจุซองขนาดเล็ก ฉีกกรอกปากทานได้ทันทีไม่ต้องใช้น้ำ '
+          'เหมาะกับสูตรที่ต้องการความเข้มข้นสูงในปริมาณน้อยและพกพาสะดวก',
     ),
     FormulationItem(
       name: 'Tablet',
       subtitle: 'ตอกเม็ด ละลายน้ำ',
       imagePath: 'assets/images/supp_tablet.png',
+      description:
+          'เม็ดตอกจากผงผสมวัตถุดิบ ควบคุมต้นทุนต่อหน่วยได้ดีและผลิตได้ปริมาณมาก '
+          'เหมาะกับสูตรวิตามินรวมและแร่ธาตุที่ต้องการความคงตัวสูง',
     ),
     FormulationItem(
       name: 'Oil',
       subtitle: 'น้ำมัน',
       imagePath: 'assets/images/supp_oil.png',
+      description:
+          'น้ำมันสกัดบรรจุขวดสำหรับรับประทานโดยตรงหรือหยดผสมอาหาร '
+          'เหมาะกับสูตรที่เน้นกรดไขมันจำเป็นอย่าง Omega-3 หรือ MCT',
     ),
     FormulationItem(
       name: 'Pellet',
       subtitle: 'เม็ดกลมหรือแท่งขนาดเล็ก',
       imagePath: 'assets/images/supp_pellet.png',
+      description:
+          'เม็ดกลมหรือแท่งขนาดเล็กทานง่าย ควบคุมปริมาณต่อโดสได้ละเอียด '
+          'เหมาะกับผลิตภัณฑ์เสริมอาหารสัตว์เลี้ยงหรือโดสขนาดจิ๋ว',
     ),
     FormulationItem(
       name: 'Protein',
       subtitle: 'โปรตีนจากพืชและสัตว์',
       imagePath: 'assets/images/supp_protein.png',
+      description:
+          'ผงโปรตีนจากพืชหรือสัตว์ ชงดื่มก่อน-หลังออกกำลังกาย '
+          'ปรับรสชาติและสัดส่วนโปรตีนได้ตามกลุ่มเป้าหมายสายฟิตเนส',
     ),
   ],
 );
@@ -87,66 +116,105 @@ const cosmeticFormulation = FormulationCategory(
       name: 'Cleaner/Shower/Soap',
       subtitle: 'ผลิตภัณฑ์ทำความสะอาดผิวหน้า',
       imagePath: 'assets/images/cos_cleaner.png',
+      description:
+          'ผลิตภัณฑ์ทำความสะอาดผิวหน้าและผิวกายที่ใช้เป็นประจำทุกวัน '
+          'เช่น โฟมล้างหน้า เจลอาบน้ำ สบู่ก้อน เป็นสินค้าเข้าถึงลูกค้าได้ง่ายและซื้อซ้ำสูง',
     ),
     FormulationItem(
       name: 'Cream/Serum/Lotion',
       subtitle: 'ครีม เซรั่ม โลชั่น',
       imagePath: 'assets/images/cos_cream_serum.png',
+      description:
+          'เนื้อครีม เซรั่ม หรือโลชั่นบำรุงผิวเข้มข้นด้วยสารสกัดตามสูตรที่ต้องการ '
+          'ปรับเนื้อสัมผัสได้หลากหลายตั้งแต่บางเบาไปจนถึงเข้มข้น',
     ),
     FormulationItem(
       name: 'Facial Care',
       subtitle: 'บำรุงผิวหน้าอย่างบางเบา',
       imagePath: 'assets/images/cos_facial.png',
+      description:
+          'ผลิตภัณฑ์บำรุงผิวหน้าเนื้อบางเบาซึมซาบไว เช่น เอสเซนส์ โทนเนอร์ มาส์ก '
+          'เหมาะกับสูตรที่เน้นบำรุงเฉพาะจุดหรือใช้ต่อจากคลีนเซอร์',
     ),
     FormulationItem(
       name: 'Scrub',
       subtitle: 'ผลัดเซลล์ผิว',
       imagePath: 'assets/images/cos_scrub.png',
+      description:
+          'ผลิตภัณฑ์ขัดผิวช่วยผลัดเซลล์ผิวที่ตายแล้ว เลือกเกรนความหยาบของเนื้อสครับได้ตามการใช้งาน '
+          'เหมาะเป็นสินค้าเสริมในไลน์ดูแลผิวกาย',
     ),
     FormulationItem(
       name: 'Sunscreen toneup',
       subtitle: 'ปกป้องผิวจากแสงแดด',
       imagePath: 'assets/images/cos_sunscreen.png',
+      description:
+          'ครีมกันแดดที่ปรับสีผิวให้ดูกระจ่างใสขึ้นทันทีพร้อมปกป้องแสงแดด '
+          'เป็นเทรนด์ที่ตลาดเติบโตแรงเพราะทดแทนได้ทั้งบำรุงผิว กันแดด และไพรเมอร์แต่งหน้าในขั้นตอนเดียว',
     ),
     FormulationItem(
       name: 'Hair Care',
       subtitle: 'แชมพูและครีมนวด',
       imagePath: 'assets/images/cos_haircare.png',
+      description:
+          'แชมพู ครีมนวด และผลิตภัณฑ์ดูแลเส้นผม '
+          'ปรับสูตรเฉพาะปัญหาผมได้ เช่น ผมร่วง รังแค ผมแห้งเสีย',
     ),
     FormulationItem(
       name: 'Deodorant',
       subtitle: 'ดูแลบำรุงผิวใต้วงแขน',
       imagePath: 'assets/images/cos_deodorant.png',
+      description:
+          'ผลิตภัณฑ์ระงับกลิ่นกายรูปแบบแท่ง โรลออน หรือสเปรย์ '
+          'ใช้งานสะดวกพกพาง่าย เป็นสินค้าที่ลูกค้าใช้ต่อเนื่องทุกวัน',
     ),
     FormulationItem(
       name: 'Hand/Nail',
       subtitle: 'บำรุงเล็บและผิวมือ',
       imagePath: 'assets/images/cos_handnail.png',
+      description:
+          'ครีมบำรุงมือและเล็บเนื้อเบาซึมไว ไม่เหนอะหนะ '
+          'เหมาะเป็นสินค้าเสริมในไลน์ผลิตภัณฑ์ความงามหรือของแถมโปรโมชั่น',
     ),
     FormulationItem(
       name: 'Lip/Mouth',
       subtitle: 'บำรุงริมฝีปาก',
       imagePath: 'assets/images/cos_lipmouth.png',
+      description:
+          'ลิปบาล์ม ลิปสติก หรือลิปกลอสบำรุงริมฝีปาก '
+          'มีให้เลือกทั้งสูตรบำรุงไร้สีและสูตรมีสีติดทนสำหรับแบรนด์ที่อยากทำไลน์เมคอัพ',
     ),
     FormulationItem(
       name: 'Fragrance',
       subtitle: 'เพิ่มอรรถรสด้วยกลิ่น',
       imagePath: 'assets/images/cos_fragrance.png',
+      description:
+          'น้ำหอมและผลิตภัณฑ์ให้กลิ่นติดทนนาน '
+          'ปรับสัดส่วนหัวน้ำหอมและความเข้มข้นได้ตามคาแรกเตอร์ของแบรนด์',
     ),
     FormulationItem(
       name: 'Cosmetic',
       subtitle: 'ผลิตภัณฑ์ความงาม',
       imagePath: 'assets/images/cos_cosmetic.png',
+      description:
+          'เครื่องสำอางแต่งหน้า เช่น อายแชโดว์ บลัชออน ลิปกลอส รองพื้น '
+          'เหมาะกับแบรนด์ที่ต้องการขยายไลน์สู่กลุ่มเมคอัพ',
     ),
     FormulationItem(
       name: 'Gentle&Feminine',
       subtitle: 'บำรุงผิว',
       imagePath: 'assets/images/cos_feminine.png',
+      description:
+          'ผลิตภัณฑ์ดูแลผิวบอบบางและจุดซ่อนเร้นสำหรับผู้หญิง '
+          'สูตรอ่อนโยน pH สมดุล ไม่ก่อให้เกิดการระคายเคือง',
     ),
     FormulationItem(
       name: 'Men/Exercise',
       subtitle: 'ผลิตภัณฑ์ความงาม',
       imagePath: 'assets/images/cos_men.png',
+      description:
+          'ผลิตภัณฑ์ดูแลผิวสำหรับผู้ชายและสายออกกำลังกาย เช่น เจลอาบน้ำ โรลออน '
+          'ดีไซน์แพ็กเกจจิ้งที่เน้นความแข็งแรงทนทาน',
     ),
   ],
 );

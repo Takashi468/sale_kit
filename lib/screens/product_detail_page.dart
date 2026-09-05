@@ -51,6 +51,25 @@ class ProductDetailPage extends StatelessWidget {
               item.subtitle,
               style: const TextStyle(fontSize: 14, color: AppColors.inkMuted),
             ),
+            if (item.description != null) ...[
+              const SizedBox(height: 20),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.surfaceMuted,
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Text(
+                  item.description!,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    height: 1.5,
+                    color: AppColors.ink,
+                  ),
+                ),
+              ),
+            ],
           ],
         ),
       ),
